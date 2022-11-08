@@ -12,7 +12,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { RequestleaveComponent } from './components/requestleave/requestleave.component';
-import { WorkinghoursComponent } from './components/workinghours/workinghours.component';
 import { PaymentrulesComponent } from './components/paymentrules/paymentrules.component';
 import { CompanyrulesComponent } from './components/companyrules/companyrules.component';
 import { AddEmployeeComponent } from './components/employees/add-employee/add-employee.component';
@@ -21,6 +20,9 @@ import { EditemployeeComponent } from './components/employees/editemployee/edite
 import { AdddesignationComponent } from './components/designation/adddesignation/adddesignation.component';
 import { EditdesignationComponent } from './components/designation/editdesignation/editdesignation.component';
 import { DesignationdetailsComponent } from './components/designation/designationdetails/designationdetails.component';
+import { WorkinghoursdetailsComponent } from './components/workinghours/workinghoursdetails/workinghoursdetails.component';
+import { AddworkinghoursComponent } from './components/workinghours/addworkinghours/addworkinghours.component';
+import { EditworkinghoursComponent } from './components/workinghours/editworkinghours/editworkinghours.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,6 @@ import { DesignationdetailsComponent } from './components/designation/designatio
     PagenotfoundComponent,
     LoginComponent,
     RequestleaveComponent,
-    WorkinghoursComponent,
     PaymentrulesComponent,
     CompanyrulesComponent,
     AddEmployeeComponent,
@@ -38,6 +39,9 @@ import { DesignationdetailsComponent } from './components/designation/designatio
     AdddesignationComponent,
     EditdesignationComponent,
     DesignationdetailsComponent,
+    WorkinghoursdetailsComponent,
+    AddworkinghoursComponent,
+    EditworkinghoursComponent,
   ],
   imports: [
     BrowserModule,

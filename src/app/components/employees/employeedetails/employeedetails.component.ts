@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeDetails } from 'src/app/models/employeedetails.model';
-import { EmployeedetailsService } from 'src/app/services/employeedetails.service';
 import { EmployeeserviceService } from 'src/app/services/employeeservice.service';
 
 @Component({

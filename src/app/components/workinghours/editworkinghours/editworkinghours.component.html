@@ -1,0 +1,33 @@
+<div class="container my-5">
+    <h1 class="mb-3">Edit WorkingHours </h1>
+    <div class="row">
+        <div class="col-6">
+        <form #form="ngForm" (ngSubmit)="updateWorkingHours">
+            <div class="mb-3">
+                <label for="id" class="form-label">ID</label>
+                <input type="number" class="form-control" id="id" readonly
+                name="id"[(ngModel)]="workingHourDetails.hoursID">
+              </div>
+             
+            <div class="mb-3">
+              <label for="employeeid" class="form-label">Employee ID</label>
+              <input type="number" class="form-control" id="emplyeeid"
+              name="employeeid"[(ngModel)]="workingHourDetails.employeeID">
+            </div>
+            <div class="mb-3">
+                <label for="companyWokingHours" class="form-label">Company Working Hours</label>
+                <input type="number" class="form-control" id="companyWokingHours" 
+                name="companyWokingHours"[(ngModel)]="workingHourDetails.companyWokingHours">
+              </div>
+              <div class="mb-3">
+                <label for="employeeWorkingHours" class="form-label">Employee Working Hours</label>
+                <input type="number" class="form-control" id="employeeWorkingHours" 
+                name="employeeWorkingHours"[(ngModel)]="workingHourDetails.employeeWorkingHours">
+              </div>
+            <button type="submit" class="btn btn-primary" (click)="updateWorkingHours()">Save</button>
+            <button type="button" class="btn btn-danger"(click)="deleteWorkingHours(workingHourDetails.hoursID)">Delete</button>
+          </form>  
+                      
+        </div>
+    </div>
+</div>

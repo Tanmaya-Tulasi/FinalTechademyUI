@@ -35,5 +35,5 @@ export class AdddesignationComponent implements OnInit {
     });
   }
 
-
+ 
 }

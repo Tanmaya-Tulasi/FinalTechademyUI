@@ -28,4 +28,5 @@ export class DesignationService {
   deleteDesignation(id:number):Observable<Designation>
   {
    return this.http.delete<Designation>('https://localhost:44379/api/Designation/'+id);
-  }}
+  }
+} 

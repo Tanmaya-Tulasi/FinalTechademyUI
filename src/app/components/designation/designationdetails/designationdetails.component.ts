@@ -24,5 +24,5 @@ export class DesignationdetailsComponent implements OnInit {
         console.log(response);
       }
     })
-  }
+  } 
 }

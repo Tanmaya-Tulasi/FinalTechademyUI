@@ -1,0 +1,25 @@
+
+<div class="container my-5">
+    <h1 class="mb-3">WorkingHours    <a class="mb-2 mb-lg-0" [routerLink]="['/addworkinghours']">Add</a></h1>
+    
+    <table class="table" *ngIf="WorkingHoursDetails && WorkingHoursDetails.length > 0">
+        <thead>
+            <tr>
+            <th>Id</th>
+            <th>Employee ID</th>
+            <th>Company Working Hours</th>
+            <th>Employee Working Hours</th>            
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let workinghours of WorkingHoursDetails">
+                <td>{{workinghours.hoursID}}</td>
+                <td>{{workinghours.employeeID}}</td>
+                <td>{{workinghours.companyWokingHours}}</td>
+                <td>{{workinghours.employeeWorkingHours}}</td>
+                <td><a [routerLink]="['/workinghours','edit',workinghours.hoursID]">View</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!WorkingHoursDetails || WorkingHoursDetails.length<=0">No WorkingHoursDetails found</p>
+</div>

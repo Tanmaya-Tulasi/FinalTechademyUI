@@ -10,6 +10,9 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AddworkinghoursComponent } from './components/workinghours/addworkinghours/addworkinghours.component';
+import { EditworkinghoursComponent } from './components/workinghours/editworkinghours/editworkinghours.component';
+import { WorkinghoursdetailsComponent } from './components/workinghours/workinghoursdetails/workinghoursdetails.component';
 import { AuthguardService } from './services/authguard.service';
 
 const routes: Routes = [
@@ -40,6 +43,10 @@ const routes: Routes = [
     component : DesignationdetailsComponent,
   },
   {
+    path: 'workinghoursdetails',
+    component : WorkinghoursdetailsComponent,
+  },
+  {
     path :'addmployee',
     component : AddEmployeeComponent
   },
@@ -48,12 +55,20 @@ const routes: Routes = [
     component : AdddesignationComponent
   },
   {
+    path :'addworkinghours',
+    component : AddworkinghoursComponent
+  },
+  {
     path :'employee/edit/:id',
     component : EditemployeeComponent
   },
   {
     path :'designation/edit/:id',
     component : EditdesignationComponent
+  },
+  {
+    path :'workinghours/edit/:id',
+    component : EditworkinghoursComponent
   },
   
   {
