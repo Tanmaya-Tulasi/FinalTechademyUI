@@ -1,1 +1,33 @@
-<p>editdesignation works!</p>
+<div class="container my-5">
+    <h1 class="mb-3">Edit Designation </h1>
+    <div class="row">
+        <div class="col-6">
+        <form #form="ngForm" (ngSubmit)="updateDesignation">
+            <div class="mb-3">
+                <label for="id" class="form-label">Designation Id</label>
+                <input type="number" class="form-control" id="id" readonly
+                name="id"[(ngModel)]="designationDetails.designationID">
+              </div>
+             
+            <div class="mb-3">
+              <label for="name" class="form-label">Designation Name</label>
+              <input type="text" class="form-control" id="name"
+              name="name"[(ngModel)]="designationDetails.designationName">
+            </div>
+            <div class="mb-3">
+                <label for="departmentName" class="form-label">Department Name</label>
+                <input type="text" class="form-control" id="departmentName" 
+                name="departmentName"[(ngModel)]="designationDetails.departmentName">
+              </div>
+              <div class="mb-3">
+                <label for="roleName" class="form-label">Role</label>
+                <input type="text" class="form-control" id="roleName" 
+                name="roleName"[(ngModel)]="designationDetails.roleName">
+              </div>
+            <button type="submit" class="btn btn-primary" (click)="updateDesignation()">Save</button>
+            <button type="button" class="btn btn-danger"(click)="deleteDesignation(designationDetails.designationID)">Delete</button>
+          </form>  
+                      
+        </div>
+    </div>
+</div>

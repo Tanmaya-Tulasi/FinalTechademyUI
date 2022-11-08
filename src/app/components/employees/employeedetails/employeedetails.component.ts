@@ -18,6 +18,7 @@ export class EmployeedetailsComponent implements OnInit {
       next : (Employeedetails) =>
       {
         this.EmployeeDetails = Employeedetails;
+        console.log(this.EmployeeDetails);
       },
       error : (response) =>
       {

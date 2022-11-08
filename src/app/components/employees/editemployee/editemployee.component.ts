@@ -33,6 +33,8 @@ export class EditemployeeComponent implements OnInit {
             this.employeesService.getEmployee(id)
             .subscribe({
               next:(response) =>{
+                //console.log("ID check");
+                //console.log(this.employeeDetails.designationId);
                 this.employeeDetails=response;
               }
             });
@@ -44,14 +46,14 @@ export class EditemployeeComponent implements OnInit {
       this.employeesService.updateEmployee(this.employeeDetails.id,this.employeeDetails)
       .subscribe({
         next:(response) =>{
-          this.router.navigate(['employeedetails']);
+          this.router.navigate(['/employeedetails']);
         }});
     }
     deleteEmployee(id:number){
       this.employeesService.deleteEmployee(id)
       .subscribe({
         next:(response) =>{
-          this.router.navigate(['employeedetails']);
+          this.router.navigate(['/employeedetails']);
         }
       });
   }

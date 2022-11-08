@@ -35,6 +35,8 @@ export class AddEmployeeComponent implements OnInit {
       next:(Employee) =>{
         
         console.log(Employee);
+        this.router.navigate(['/employeedetails']);
+
       }
     });
   }

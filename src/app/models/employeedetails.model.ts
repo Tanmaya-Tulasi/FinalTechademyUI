@@ -5,7 +5,7 @@ export interface EmployeeDetails{
     address : string,
     email : string,
     gender : string,
-    designationId : number,
+    designationID : number,
     designationName: string,
     roleName:string,
     departmentName: string,

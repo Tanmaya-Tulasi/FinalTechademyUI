@@ -16,10 +16,8 @@ import { WorkinghoursComponent } from './components/workinghours/workinghours.co
 import { PaymentrulesComponent } from './components/paymentrules/paymentrules.component';
 import { CompanyrulesComponent } from './components/companyrules/companyrules.component';
 import { AddEmployeeComponent } from './components/employees/add-employee/add-employee.component';
-import { EmployeeComponent } from './components/employees/employee/employee.component';
 import { EmployeedetailsComponent } from './components/employees/employeedetails/employeedetails.component';
 import { EditemployeeComponent } from './components/employees/editemployee/editemployee.component';
-import { DeleteemployeeComponent } from './components/employees/deleteemployee/deleteemployee.component';
 import { AdddesignationComponent } from './components/designation/adddesignation/adddesignation.component';
 import { EditdesignationComponent } from './components/designation/editdesignation/editdesignation.component';
 import { DesignationdetailsComponent } from './components/designation/designationdetails/designationdetails.component';
@@ -35,10 +33,8 @@ import { DesignationdetailsComponent } from './components/designation/designatio
     PaymentrulesComponent,
     CompanyrulesComponent,
     AddEmployeeComponent,
-    EmployeeComponent,
     EmployeedetailsComponent,
     EditemployeeComponent,
-    DeleteemployeeComponent,
     AdddesignationComponent,
     EditdesignationComponent,
     DesignationdetailsComponent,
