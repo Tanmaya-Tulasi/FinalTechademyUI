@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddEmployeeComponent } from './components/employees/add-employee/add-employee.component';
+import { DeleteemployeeComponent } from './components/employees/deleteemployee/deleteemployee.component';
+import { EditemployeeComponent } from './components/employees/editemployee/editemployee.component';
+import { EmployeeComponent } from './components/employees/employee/employee.component';
+import { EmployeedetailsComponent } from './components/employees/employeedetails/employeedetails.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
@@ -25,6 +30,19 @@ const routes: Routes = [
     component : HomeComponent,
     canActivate : [AuthguardService]
   },
+  {
+    path: 'employeedetails',
+    component : EmployeedetailsComponent,
+  },
+  {
+    path :'addmployee',
+    component : AddEmployeeComponent
+  },
+  {
+    path :'employee/edit/:id',
+    component : EditemployeeComponent
+  },
+  
   {
     path: '**',
     component : PagenotfoundComponent

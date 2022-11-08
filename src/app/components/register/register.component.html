@@ -1,4 +1,4 @@
-<p class="text-center ps-3" [ngClass]="isAccountCreated?'text-success pb-1':'text-danger pb-1'">
+<p class="text-center ps-3" ngClass="isAccountCreated?'text-success pb-1':'text-danger pb-1'">
     {{displayMsg}}</p>
 
 <form [formGroup]="registerform" (ngSubmit)="registerSubmitted()" class="border p-2 rounded-3 border-dark">

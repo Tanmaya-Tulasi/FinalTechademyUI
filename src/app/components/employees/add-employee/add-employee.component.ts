@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Employee } from 'src/app/models/employee.model';
+import { EmployeedetailsService } from 'src/app/services/employeedetails.service';
 import { EmployeeserviceService } from 'src/app/services/employeeservice.service';
 
 @Component({
@@ -10,21 +11,19 @@ import { EmployeeserviceService } from 'src/app/services/employeeservice.service
 })
 export class AddEmployeeComponent implements OnInit {
 
-  
+  employee :any;
   addEmployeeRequest:Employee={
     id: 0,
-    employeeId: '',
     employeeName: '',
     email: '',
     phoneNumber: '',
     designationId: 0,
     address: '',
     gender: '',
-    memberSince: Date.now(),
+    memberSince:  new Date(2022, 11, 7)
   };
   constructor(private route:ActivatedRoute,private employeesService:EmployeeserviceService,private router:Router) {
    }
-
   ngOnInit(): void {
   }
   addEmployee()
@@ -34,6 +33,7 @@ export class AddEmployeeComponent implements OnInit {
     this.employeesService.addEmployee(this.addEmployeeRequest)
     .subscribe({
       next:(Employee) =>{
+        
         console.log(Employee);
       }
     });

@@ -1,4 +1,4 @@
-export interface Employee{
+export interface EmployeeDetails{
     id:number,
     employeeName : string,
     phoneNumber : string,
@@ -6,5 +6,8 @@ export interface Employee{
     email : string,
     gender : string,
     designationId : number,
+    designationName: string,
+    roleName:string,
+    departmentName: string,
     memberSince : Date
 }
