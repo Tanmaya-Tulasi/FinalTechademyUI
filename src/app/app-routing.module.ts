@@ -9,6 +9,9 @@ import { EmployeedetailsComponent } from './components/employees/employeedetails
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { AddPaymentRuleComponent } from './components/paymentrules/add-payment-rule/add-payment-rule.component';
+import { EditPaymentRuleComponent } from './components/paymentrules/edit-payment-rule/edit-payment-rule.component';
+import { PaymentRuleDetailsComponent } from './components/paymentrules/payment-rule-details/payment-rule-details.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AddrequestleaveComponent } from './components/requestleave/addrequestleave/addrequestleave.component';
 import { EditrequestleaveComponent } from './components/requestleave/editrequestleave/editrequestleave.component';
@@ -54,6 +57,10 @@ const routes: Routes = [
     component : RequestleavedetailsComponent,
   },
   {
+    path: 'paymentrulesdetails',
+    component : PaymentRuleDetailsComponent
+  },
+  {
     path :'addmployee',
     component : AddEmployeeComponent
   },
@@ -68,6 +75,10 @@ const routes: Routes = [
   {
     path :'addworkinghours',
     component : AddworkinghoursComponent
+  },
+  {
+    path :'addpaymentrules',
+    component : AddPaymentRuleComponent
   },
   {
     path :'employee/edit/:id',
@@ -86,6 +97,10 @@ const routes: Routes = [
 
     path :'requestleave/edit/:leaveID',
     component : EditrequestleaveComponent
+  },
+  {
+    path :'paymentrules/edit/:id',
+    component : EditPaymentRuleComponent
   },
   
   {

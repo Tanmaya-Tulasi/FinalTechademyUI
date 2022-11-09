@@ -11,7 +11,6 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
-import { PaymentrulesComponent } from './components/paymentrules/paymentrules.component';
 import { CompanyrulesComponent } from './components/companyrules/companyrules.component';
 import { AddEmployeeComponent } from './components/employees/add-employee/add-employee.component';
 import { EmployeedetailsComponent } from './components/employees/employeedetails/employeedetails.component';
@@ -25,6 +24,10 @@ import { EditworkinghoursComponent } from './components/workinghours/editworking
 import { AddrequestleaveComponent } from './components/requestleave/addrequestleave/addrequestleave.component';
 import { EditrequestleaveComponent } from './components/requestleave/editrequestleave/editrequestleave.component';
 import { RequestleavedetailsComponent } from './components/requestleave/requestleavedetails/requestleavedetails.component';
+import { AddPaymentRuleComponent } from './components/paymentrules/add-payment-rule/add-payment-rule.component';
+import { EditPaymentRuleComponent } from './components/paymentrules/edit-payment-rule/edit-payment-rule.component';
+import { PaymentRuleDetailsComponent } from './components/paymentrules/payment-rule-details/payment-rule-details.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,6 @@ import { RequestleavedetailsComponent } from './components/requestleave/requestl
     HomeComponent,
     PagenotfoundComponent,
     LoginComponent,
-    PaymentrulesComponent,
     CompanyrulesComponent,
     AddEmployeeComponent,
     EmployeedetailsComponent,
@@ -46,6 +48,9 @@ import { RequestleavedetailsComponent } from './components/requestleave/requestl
     AddrequestleaveComponent,
     EditrequestleaveComponent,
     RequestleavedetailsComponent,
+    AddPaymentRuleComponent,
+    EditPaymentRuleComponent,
+    PaymentRuleDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +58,7 @@ import { RequestleavedetailsComponent } from './components/requestleave/requestl
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientTestingModule
     
   ],
   providers: [],

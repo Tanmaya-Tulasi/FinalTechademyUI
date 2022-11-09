@@ -18,7 +18,7 @@ export class AddworkinghoursComponent implements OnInit {
   };
   constructor(private route:ActivatedRoute,private workinghourservice:WorkinghoursService,private router:Router) {
    }
-  ngOnInit(): void {
+  ngOnInit(): void { 
   }
   addWorkingHours()
   {

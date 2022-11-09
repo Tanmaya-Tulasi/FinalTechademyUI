@@ -1,0 +1,19 @@
+
+<div class="container my-5">
+    <h1 class="mb-3">Payment Rules</h1>
+    <div>
+        <h4 class="text-center"> <a class=" mb-2 mb-lg-0" [routerLink]="['/addpaymentrules']">Add New Rule</a> </h4>
+    </div>
+    <div class="table" *ngIf="PaymentRulesDetails && PaymentRulesDetails.length > 0">
+        <ol type="1">
+            <div *ngFor="let rules of PaymentRulesDetails">
+                
+                <li><p>{{rules.paymentRule}}            
+                    <a [routerLink]="['/paymentrules','edit',rules.paymentID]">Edit / Delete</a></p>
+               </li>
+               
+            </div>
+        </ol>
+    </div>
+    <p *ngIf="!PaymentRulesDetails || PaymentRulesDetails.length<=0">No PaymentRulesDetails found</p>
+</div>

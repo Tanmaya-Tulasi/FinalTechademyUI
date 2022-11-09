@@ -1,0 +1,24 @@
+<div class="container my-5">
+    <h1 class="mb-3">Edit WorkingHours </h1>
+    <div class="row">
+        <div class="col-6">
+        <form  (ngSubmit)="updatePaymentRules">
+            <div class="mb-3">
+                <label for="id" class="form-label">ID</label>
+                <input type="number" class="form-control" id="id" readonly
+                name="id"[(ngModel)]="paymentrules.paymentID">
+              </div>
+             
+            <div class="mb-3">
+              <label for="paymentRule" class="form-label">Payment Rule</label>
+              <input type="text" class="form-control" id="paymentRule"
+              name="paymentRule"[(ngModel)]="paymentrules.paymentRule">
+            </div>
+            
+            <button type="submit" class="btn btn-primary" (click)="updatePaymentRules()">Save</button>
+            <button type="button" class="btn btn-danger"(click)="deletePaymentRules(paymentrules.paymentID)">Delete</button>
+          </form>  
+                      
+        </div>
+    </div>
+</div>

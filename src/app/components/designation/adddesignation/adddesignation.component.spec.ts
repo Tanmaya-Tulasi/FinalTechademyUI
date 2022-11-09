@@ -1,5 +1,7 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
+import { Designation } from 'src/app/models/designation.model';
 import { AdddesignationComponent } from './adddesignation.component';
 
 describe('AdddesignationComponent', () => {
@@ -8,6 +10,8 @@ describe('AdddesignationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports : [HttpClientTestingModule,
+        RouterTestingModule],
       declarations: [ AdddesignationComponent ]
     })
     .compileComponents();
@@ -20,4 +24,11 @@ describe('AdddesignationComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  let request : Designation = {
+    designationID: 0,
+    designationName: '',
+    departmentName: '',
+    roleName: ''
+  }
+  
 });

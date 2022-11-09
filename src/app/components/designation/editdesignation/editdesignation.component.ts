@@ -56,9 +56,7 @@ export class EditdesignationComponent implements OnInit {
         next:(response) =>{
           this.router.navigate(['/designationdetails']);
         }
-      });
-  
-  
-  }
+      });  
+   }
 
 }
