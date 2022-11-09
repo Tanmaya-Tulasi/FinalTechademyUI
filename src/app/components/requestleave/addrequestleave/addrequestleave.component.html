@@ -1,0 +1,32 @@
+<div class="container my-5">
+    <h1 class="mb-3">Add Designation </h1>
+    <div class="row">
+        <div class="col-6">
+        <form #form="ngForm" (ngSubmit)="addLeave()">
+            <div class="mb-3">
+              <label for="employeeID" class="form-label">Employee ID</label>
+              <input type="number" class="form-control" id="employeeID"
+              name="employeeID"[(ngModel)]="request.employeeID">
+            </div>
+            <div class="mb-3">
+                <label for="leaveType" class="form-label">Leave Type</label>
+                <input type="text" class="form-control" id="leaveType"
+                name="leaveType"[(ngModel)]="request.leaveType">
+              </div>
+              
+              <div class="mb-3">
+                <label for="leaveReason" class="form-label">Leave Reason</label>
+                <input type="text" class="form-control" id="leaveReason"
+                name="leaveReason"[(ngModel)]="request.leaveReason" >
+              </div>
+              <div class="mb-3">
+                <label for="leaveStatus" class="form-label">Leave Status</label>
+                <input type="text" class="form-control" id="leaveStatus"
+                name="leaveStatus"[(ngModel)]="request.leaveStatus" >
+              </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </form>  
+                      
+        </div>
+    </div>
+</div>

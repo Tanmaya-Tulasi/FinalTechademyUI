@@ -10,6 +10,9 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AddrequestleaveComponent } from './components/requestleave/addrequestleave/addrequestleave.component';
+import { EditrequestleaveComponent } from './components/requestleave/editrequestleave/editrequestleave.component';
+import { RequestleavedetailsComponent } from './components/requestleave/requestleavedetails/requestleavedetails.component';
 import { AddworkinghoursComponent } from './components/workinghours/addworkinghours/addworkinghours.component';
 import { EditworkinghoursComponent } from './components/workinghours/editworkinghours/editworkinghours.component';
 import { WorkinghoursdetailsComponent } from './components/workinghours/workinghoursdetails/workinghoursdetails.component';
@@ -47,12 +50,20 @@ const routes: Routes = [
     component : WorkinghoursdetailsComponent,
   },
   {
+    path: 'requestleavedetails',
+    component : RequestleavedetailsComponent,
+  },
+  {
     path :'addmployee',
     component : AddEmployeeComponent
   },
   {
     path :'adddesignation',
     component : AdddesignationComponent
+  },
+  {
+    path :'addrequestleave',
+    component : AddrequestleaveComponent
   },
   {
     path :'addworkinghours',
@@ -69,6 +80,12 @@ const routes: Routes = [
   {
     path :'workinghours/edit/:id',
     component : EditworkinghoursComponent
+  },
+  
+  {
+
+    path :'requestleave/edit/:leaveID',
+    component : EditrequestleaveComponent
   },
   
   {

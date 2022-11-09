@@ -1,0 +1,37 @@
+<div class="container my-5">
+    <h2>Request Leave Management</h2>
+    <h3 class="mb-2 mb-lg-0"><a [routerLink]="['/addrequestleave']">Add</a></h3>
+</div>
+
+<div class="container my-5">
+    
+    <table class="table" *ngIf="RequestLeave && RequestLeave.length > 0">
+        <thead>
+            <tr>
+            <th>Leave ID</th>
+            <th>Employee ID</th>
+            <th>Leave Type</th>
+            <th>When</th>
+            <th>Leave Reason</th>
+            <th>Leave Status</th>
+            <th></th>   
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of RequestLeave">
+            <td>{{emp.leaveID}}</td>
+            <td>{{emp.employeeID}}</td>
+            
+            <td>{{emp.leaveType}}</td>
+            <td>{{emp.when}}</td>
+            <td>{{emp.leaveReason}}</td>
+            <td>{{emp.leaveStatus}}</td>
+            <td><a [routerLink]="['/requestleave','edit',emp.leaveID]">View</a></td>
+
+        </tr>
+    </tbody>
+</table>
+<p *ngIf="!RequestLeave || RequestLeave.length<=0">No records found for Designation</p>
+</div>

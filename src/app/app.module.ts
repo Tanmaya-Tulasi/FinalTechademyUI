@@ -11,7 +11,6 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
-import { RequestleaveComponent } from './components/requestleave/requestleave.component';
 import { PaymentrulesComponent } from './components/paymentrules/paymentrules.component';
 import { CompanyrulesComponent } from './components/companyrules/companyrules.component';
 import { AddEmployeeComponent } from './components/employees/add-employee/add-employee.component';
@@ -23,6 +22,9 @@ import { DesignationdetailsComponent } from './components/designation/designatio
 import { WorkinghoursdetailsComponent } from './components/workinghours/workinghoursdetails/workinghoursdetails.component';
 import { AddworkinghoursComponent } from './components/workinghours/addworkinghours/addworkinghours.component';
 import { EditworkinghoursComponent } from './components/workinghours/editworkinghours/editworkinghours.component';
+import { AddrequestleaveComponent } from './components/requestleave/addrequestleave/addrequestleave.component';
+import { EditrequestleaveComponent } from './components/requestleave/editrequestleave/editrequestleave.component';
+import { RequestleavedetailsComponent } from './components/requestleave/requestleavedetails/requestleavedetails.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,6 @@ import { EditworkinghoursComponent } from './components/workinghours/editworking
     HomeComponent,
     PagenotfoundComponent,
     LoginComponent,
-    RequestleaveComponent,
     PaymentrulesComponent,
     CompanyrulesComponent,
     AddEmployeeComponent,
@@ -42,6 +43,9 @@ import { EditworkinghoursComponent } from './components/workinghours/editworking
     WorkinghoursdetailsComponent,
     AddworkinghoursComponent,
     EditworkinghoursComponent,
+    AddrequestleaveComponent,
+    EditrequestleaveComponent,
+    RequestleavedetailsComponent,
   ],
   imports: [
     BrowserModule,
