@@ -11,6 +11,14 @@ import { RequestleaveService } from 'src/app/services/requestleave.service';
 export class RequestleavedetailsComponent implements OnInit {
 
   RequestLeave:RequestLeave[]=[];
+  searchText:any;
+  title='pagination';
+  
+  POSTS:any;
+  page:number=1;
+  count:number=0;
+  tableSize:number=10;
+  tablesize:any=[5,10,15,20]
 requestleave:RequestLeave={
   leaveID:0,
   employeeID:0,
@@ -25,6 +33,11 @@ requestleave:RequestLeave={
 
 
   ngOnInit(): void {
+
+this.getAllLeaves();
+  }
+  getAllLeaves():void
+  {
     this.requestleaveservice.getAllLeaves()
     .subscribe({
       next:(RequestLeave)=>
@@ -39,4 +52,17 @@ requestleave:RequestLeave={
     })
     
   }
+  onTableDataChange(event:any)
+{
+  this.page=event;
+  this.getAllLeaves();
 }
+onTableSizeChange(event:any):void
+{
+  this.tableSize=event.target.value;
+  this.page=1;
+  this.getAllLeaves();
+}
+
+  }
+

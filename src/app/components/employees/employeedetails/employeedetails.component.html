@@ -1,8 +1,51 @@
+<nav>
+    <img src="">
+    <ul>
+        <li><a href="/employeedetails">Employee Details</a></li>
+        <li><a href="/designationdetails">Designation Details</a></li>
+        <li><a href="/workinghoursdetails">Working Hours</a></li>
+        <li><a href="/requestleavedetails">Request Leave</a></li>
+        <li><a href="/paymentrulesdetails">Payment Rules</a></li>
+    
+    </ul>
+</nav>
 <div class="container my-5">
-    <h1 class="mb-3">Employees</h1>
+    <h1 class="mb-3">Employee Management</h1>
+    <div class="center-dialog-vertically">
+    <a class="btn btn-sm text-white btn-primary"  [routerLink]="['/addmployee']">Add Employee &nbsp;<i class="bi bi-bag"></i></a>
+
+</div>
+<div class="container mt-5">
+    <div class="form-group float-end text-right">
+        
+            <input type="text" name="Search" [(ngModel)]="searchText" placeholder="Search by ID,Name">
+       
+    </div>
+</div>
+<div>
+    <p>
+
+    </p>
+</div>
+<div class="container">
+    <div>
+        <h6>Show  <select (change)="onTableSizeChange($event)">
+            
+            <option *ngFor="let size of tablesize">
+               {{size}}
+            </option>
+        </select> Entities </h6>
+       
+    </div>
+
+
+
+
+    <h1 class="table table-bordered">Employees</h1>
     <table class="table" *ngIf="EmployeeDetails && EmployeeDetails.length > 0">
-        <thead>
+        <thead class="bg-dark text-white">
             <tr>
+                <th>S.No</th>
             <th>Id</th>
             <th>Name</th>
             <th>Phone</th>
@@ -17,12 +60,16 @@
             <th>Department Name</th>
             <th>Role Name</th>
             <th>Member Since</th>
-            <th></th>
+            <th style="text-align:center">View</th>
+            <th style="text-align:center">Delete</th>
 
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let Employee of EmployeeDetails">
+           
+            <tr *ngFor="let Employee of EmployeeDetails| filter : searchText | paginate:{itemsPerPage:tableSize,
+                currentPage:page,totalItems:count}; let i=index;let sr = index">
+                <td>{{sr+1}}</td>
                 <td>{{Employee.id}}</td>
                 <td>{{Employee.employeeName}}</td>
                 <td>{{Employee.phoneNumber}}</td>
@@ -37,9 +84,18 @@
                 <td>{{Employee.departmentName}}</td>
                 <td>{{Employee.roleName}}</td>
                 <td>{{Employee.memberSince}}</td>
-                <td><a [routerLink]="['/employee','edit',Employee.id]">View</a></td>
+                <td><a style="text-align:center" class="btn btn-sm text-white btn-primary"  style="margin:5px"[routerLink]="['/employee','edit',Employee.id]">View</a></td>
+                <td><a style="text-align:center" class="btn btn-sm text-white btn-danger"  style="margin:5px"[routerLink]="['/employee','edit',Employee.id]">Delete</a></td>
             </tr>
+           
         </tbody>
     </table>
+    <div>
+    </div>
+        <pagination-controls
+        previousLabel="Prev"
+        nextLabel="Next"
+        (pageChange)="onTableDataChange($event)"></pagination-controls>
+    </div>
     <p *ngIf="!EmployeeDetails || EmployeeDetails.length<=0">No Employees found</p>
 </div> 

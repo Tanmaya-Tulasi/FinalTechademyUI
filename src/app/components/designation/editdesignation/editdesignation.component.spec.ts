@@ -1,7 +1,7 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { DesignationService } from 'src/app/services/designation.service';
 
 import { EditdesignationComponent } from './editdesignation.component';
 
@@ -11,7 +11,7 @@ describe('EditdesignationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports : [HttpClientTestingModule,
+      imports : [HttpClientModule,
         RouterTestingModule],
       declarations: [ EditdesignationComponent ]
     })

@@ -27,7 +27,10 @@ import { RequestleavedetailsComponent } from './components/requestleave/requestl
 import { AddPaymentRuleComponent } from './components/paymentrules/add-payment-rule/add-payment-rule.component';
 import { EditPaymentRuleComponent } from './components/paymentrules/edit-payment-rule/edit-payment-rule.component';
 import { PaymentRuleDetailsComponent } from './components/paymentrules/payment-rule-details/payment-rule-details.component';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { HeaderComponent } from './components/header/header/header.component';
+import { AboutComponent } from './components/about/about/about.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +54,8 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
     AddPaymentRuleComponent,
     EditPaymentRuleComponent,
     PaymentRuleDetailsComponent,
+    HeaderComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +63,9 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientTestingModule
+    Ng2SearchPipeModule,
+    NgxPaginationModule,
+
     
   ],
   providers: [],

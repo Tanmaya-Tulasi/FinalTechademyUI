@@ -35,14 +35,14 @@
                 <input type="text" class="form-control" id="address"
                 name="address"[(ngModel)]="employeeDetails.address" >
                 <div class="mb-3">
-                  <label for="designationId" class="form-label">DesignationID</label>
-                  <input type="number" class="form-control" id="designationId" 
-                  name="designationId"[(ngModel)]="employeeDetails.designationId">
+                  <label for="designationID" class="form-label">DesignationID</label>
+                  <input type="number" class="form-control" id="designationID" 
+                  name="designationID"[(ngModel)]="employeeDetails.designationID">
                 </div>
                 
               </div>
-            <button type="submit" class="btn btn-primary" (click)="updateEmployee()">Save</button>
-            <button type="button" class="btn btn-danger"(click)="deleteEmployee(employeeDetails.id)">Delete</button>
+            <button type="submit" class="btn btn-primary" style="margin:5px"(click)="updateEmployee()">Save</button>
+            <button type="button" class="btn btn-danger" style="margin:5px"(click)="deleteEmployee(employeeDetails.id)">Delete</button>
           </form>  
                       
         </div>

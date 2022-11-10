@@ -6,6 +6,7 @@ import { EditdesignationComponent } from './components/designation/editdesignati
 import { AddEmployeeComponent } from './components/employees/add-employee/add-employee.component';
 import { EditemployeeComponent } from './components/employees/editemployee/editemployee.component';
 import { EmployeedetailsComponent } from './components/employees/employeedetails/employeedetails.component';
+import { HeaderComponent } from './components/header/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
@@ -32,7 +33,7 @@ const routes: Routes = [
   },
   {
     path : '',
-    redirectTo : 'login',
+    redirectTo : 'header',
     pathMatch : 'full'
   },
   {
@@ -55,6 +56,10 @@ const routes: Routes = [
   {
     path: 'requestleavedetails',
     component : RequestleavedetailsComponent,
+  },
+  {
+    path:'header',
+    component:HeaderComponent
   },
   {
     path: 'paymentrulesdetails',

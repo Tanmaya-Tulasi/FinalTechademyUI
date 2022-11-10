@@ -1,24 +1,77 @@
-<div class="container my-5">
-    <h1 class="mb-3">Designations    <h3><a [routerLink]="['/adddesignation']">Add</a></h3></h1>
-    
-    <table class="table" *ngIf="DesignationDetails && DesignationDetails.length > 0">
-        <thead>
+<nav>
+    <img src="">
+    <ul>
+        <li><a href="/employeedetails">Employee Details</a></li>
+        <li><a href="/designationdetails">Designation Details</a></li>
+        <li><a href="/workinghoursdetails">Working Hours</a></li>
+        <li><a href="/requestleavedetails">Request Leave</a></li>
+        <li><a href="/paymentrulesdetails">Payment Rules</a></li>
+    </ul>
+</nav>
+
+
+
+    <div class=" container my-5"> 
+        <h1 class="mb-3">Designation </h1>  
+        <div class="center-dialog-vertically">
+            <a class="btn btn-sm text-white btn-primary"  [routerLink]="['/adddesignation']">Add Designation &nbsp;<i class="bi bi-bag"></i></a>
+        </div>
+        <div class="container mt-5">
+            <div class="form-group float-end text-right">
+                
+                    <input type="text" name="Search" [(ngModel)]="searchText" placeholder="Search by ID,Name,Email">
+               
+            </div>
+        </div>
+        <div>
+            <p>
+        
+            </p>
+        </div>
+        <div class="container">
+            <div>
+                <h6>Show  <select (change)="onTableSizeChange($event)">
+                    
+                    <option *ngFor="let size of tablesize">
+                       {{size}}
+                    </option>
+                </select> Entities </h6>
+               
+            </div>
+        
+
+    <table  class="table table-bordered" *ngIf="DesignationDetails && DesignationDetails.length > 0">
+        <thead class="bg-dark text-white">
             <tr>
+            <th>S.No</th>
             <th>Id</th>
             <th>Designation Name</th>
             <th>Department Name</th>
-            <th>Role</th>            
+            <th>Role</th>  
+            <th>Action</th>          
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let Designation of DesignationDetails">
+            <tr *ngFor="let Designation of DesignationDetails |filter:searchText | paginate:{itemsPerPage:tableSize, currentPage:page,
+                totalItems:count}; let i=index;let j=index;">
+                <td>{{j+1}}</td>
                 <td>{{Designation.designationID}}</td>
                 <td>{{Designation.designationName}}</td>
                 <td>{{Designation.departmentName}}</td>
                 <td>{{Designation.roleName}}</td>
-                <td><a [routerLink]="['/designation','edit',Designation.designationID]">View</a></td>
+            
+                <td><a class="btn btn-sm text-white btn-primary" style="margin:5px"[routerLink]="['/designation','edit',Designation.designationID]">View &nbsp;<i class="bi bi-bag"></i></a>
+                <a class="btn btn-sm text-white btn-danger" style="margin:5px"[routerLink]="['/designation','edit',Designation.designationID]">Delete&nbsp;<i class="bi bi-bag"></i></a></td>
+            
             </tr>
         </tbody>
     </table>
+    <div>
+    </div>
+        <pagination-controls
+        previousLabel="Prev"
+        nextLabel="Next"
+        (pageChange)="onTableDataChange($event)"></pagination-controls>
+    </div>
     <p *ngIf="!DesignationDetails || DesignationDetails.length<=0">No Designation found</p>
 </div>

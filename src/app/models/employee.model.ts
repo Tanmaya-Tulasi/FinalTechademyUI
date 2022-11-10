@@ -5,6 +5,6 @@ export interface Employee{
     address : string,
     email : string,
     gender : string,
-    designationId : number,
+    designationID : number,
     memberSince : Date
 }

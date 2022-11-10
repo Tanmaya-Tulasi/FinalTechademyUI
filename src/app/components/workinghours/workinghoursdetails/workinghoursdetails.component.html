@@ -1,25 +1,73 @@
 
-<div class="container my-5">
-    <h1 class="mb-3">WorkingHours    <a class="mb-2 mb-lg-0" [routerLink]="['/addworkinghours']">Add</a></h1>
-    
-    <table class="table" *ngIf="WorkingHoursDetails && WorkingHoursDetails.length > 0">
-        <thead>
+
+<nav>
+    <img src="">
+    <ul>
+        <li><a href="/employeedetails">Employee Details</a></li>
+        <li><a href="/designationdetails">Designation Details</a></li>
+        <li><a href="/workinghoursdetails">Working Hours</a></li>
+        <li><a href="/requestleavedetails">Request Leave</a></li>
+        <li><a href="/paymentrulesdetails">Payment Rules</a></li>
+    </ul>
+  </nav>
+  
+        <div class="container my-5">
+            <h1 class="mb-3">Working Hour Management</h1>
+            
+        <div class="container">
+            <div class="center-dialog-vertically">
+            <a class="btn btn-sm text-white btn-primary"  [routerLink]="['/addworkinghours']">Add Working Hours &nbsp;<i class="bi bi-bag"></i></a>
+        </div>
+        </div>
+        <div class="container mt-5">
+            <div class="form-group float-end text-right">
+                
+                    <input type="text" name="Search" [(ngModel)]="searchText" placeholder="Search by ID">
+               
+            </div>
+        </div>
+        <div class="container">
+            <div>
+                <h6>Show  <select (change)="onTableSizeChange($event)">
+                    
+                    <option *ngFor="let size of tablesize">
+                       {{size}}
+                    </option>
+                </select> Entities </h6>
+               
+            </div>
+
+    <table class="table table-bordered" *ngIf="WorkingHoursDetails && WorkingHoursDetails.length > 0">
+        <thead class="bg-dark text-white">
             <tr>
+                <th>S.No</th>
             <th>Id</th>
             <th>Employee ID</th>
             <th>Company Working Hours</th>
-            <th>Employee Working Hours</th>            
+            <th>Employee Working Hours</th> 
+            <th style="text-align:center">Action</th>
+                          
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let workinghours of WorkingHoursDetails">
+            <tr *ngFor="let workinghours of WorkingHoursDetails  |filter:searchText | paginate:{itemsPerPage:tableSize,
+                currentPage:page,
+                totalItems:count}; let i=index;let sr=index">
+                <td>{{sr+1}}</td>
                 <td>{{workinghours.hoursID}}</td>
                 <td>{{workinghours.employeeID}}</td>
                 <td>{{workinghours.companyWokingHours}}</td>
                 <td>{{workinghours.employeeWorkingHours}}</td>
-                <td><a [routerLink]="['/workinghours','edit',workinghours.hoursID]">View</a></td>
+                <td style="text-align:center"><a class="btn btn-sm text-white btn-primary"  style="margin:5px" [routerLink]="['/workinghours','edit',workinghours.hoursID]">View &nbsp;<i class="bi bi-bag"></i> </a>
+                <a class="btn btn-sm text-white btn-danger"  style="margin:5px"  [routerLink]="['/workinghours','edit',workinghours.hoursID]">Delete &nbsp;<i class="bi bi-bag"></i> </a></td>
+                
             </tr>
         </tbody>
     </table>
+    <pagination-controls
+previousLabel="Prev"
+nextLabel="Next"
+(pageChange)="onTableDataChange($event)"></pagination-controls>
+</div>
     <p *ngIf="!WorkingHoursDetails || WorkingHoursDetails.length<=0">No WorkingHoursDetails found</p>
 </div>

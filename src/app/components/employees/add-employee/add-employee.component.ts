@@ -16,7 +16,7 @@ export class AddEmployeeComponent implements OnInit {
     employeeName: '',
     email: '',
     phoneNumber: '',
-    designationId: 0,
+    designationID: 0,
     address: '',
     gender: '',
     memberSince:  new Date(2022, 11, 7)

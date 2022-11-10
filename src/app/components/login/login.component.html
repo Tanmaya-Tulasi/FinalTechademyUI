@@ -1,7 +1,7 @@
 <p class="text-center ps-3" [ngClass]="isUserValid?'text-success pb-1':'text-danger pb-1'">
     {{displayMsg}}</p>
-
-
+    
+<div class="container">
 <form [formGroup]="loginform" (ngSubmit)="loginSubmitted()" class="border p-3 rounded-3" >
     <div class="row g-0">
         <div class="col text-center bg-light p-2 mb-3">
@@ -45,4 +45,5 @@
         </div>
     </div>
 </form>
+</div>
 <router-outlet></router-outlet>

@@ -1,4 +1,4 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PaymentRuleDetailsComponent } from './payment-rule-details.component';
@@ -9,7 +9,7 @@ describe('PaymentRuleDetailsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports : [HttpClientTestingModule],
+      imports : [HttpClientModule],
       declarations: [ PaymentRuleDetailsComponent ]
     })
     .compileComponents();

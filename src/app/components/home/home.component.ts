@@ -9,7 +9,7 @@ import { Route, Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   constructor(private router:Router) { }
-
+  myimage:string="assets/images/pexels-pixabay-273230.jpg";
   ngOnInit(): void {
   }
 
